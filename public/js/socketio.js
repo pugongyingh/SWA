@@ -43,7 +43,8 @@ function updateClientList(data) {
             if (client.id != c.value) {
                 const li = document.createElement('li');
                 list.appendChild(li);
-                li.innerHTML = `<b>${client.name} | ${client.email}</b>`;
+                li.innerHTML = `<label><b>${client.name}</b> | <i data-email="${client.email}" class="fas fa-envelope"></i> |
+                 <i data-clientid="${client.id}" class="fas fa-user-secret user-secret"></i></label>`;
                 li.setAttribute('id', client.id);
             }
         });
