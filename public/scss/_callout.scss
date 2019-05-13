@@ -1,0 +1,100 @@
+.callout {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    top:0.5%;
+    left: 10%;
+    width: 90%;
+    border-radius: 9px;
+
+    strong {
+        margin: 0 0.1rem 0 0;
+        padding: 0.1rem;
+    }
+
+    &.alert {
+        background: rgba(235, 117, 117, 0.8);
+        color: rgb(58, 2, 2);
+    }
+
+    &.success {
+        background: rgba(121, 236, 127, 0.8);
+        color: rgb(2, 58, 2);
+    }
+
+    &.warning {
+        background: rgba(233, 233, 90, 0.8);
+        color: rgb(104, 104, 4);
+    }
+
+    &.primary {
+        background: rgba(130, 171, 224, 0.8);
+        color: rgb(2, 30, 54);
+    }
+
+    &.info {
+        background: rgba(1, 23, 36, 0.8);
+        color: rgb(238, 242, 247);
+    }
+
+    &.information {
+        background: rgba(6, 41, 61, 0.8);
+        color: rgb(251, 230, 159);
+    }
+
+    .close-button {
+        position: absolute;
+        right: 0.5%;
+        top: 0;
+        margin: 0;
+        padding: 0.2rem;
+        border: none;
+        background: transparent;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+
+        &:hover {
+            @include easeOut();
+            color:#9a9a9a;
+            cursor: pointer;
+        }
+    }
+
+    &.close {
+        @include easeOut();
+        visibility: hidden;
+    }
+}
+
+@include mediaMds {
+    .callout {
+        margin: 0;
+        padding: 10px;
+        position: absolute;
+        top:0.5%;
+        left: 25%;
+        width: 50%;
+    }
+
+    .alert {
+        background: rgba(238, 20, 30, 0.8);
+        color: rgb(58, 2, 2);
+    }
+}
+
+@include mediaMd {
+    .callout {
+        margin: 0;
+        padding: 10px;
+        position: absolute;
+        top:0.5%;
+        left: 25%;
+        width: 50%;
+    }
+
+    .alert {
+        background: rgba(238, 20, 30, 0.8);
+        color: rgb(58, 2, 2);
+    }
+}

@@ -1,0 +1,24 @@
+<form class="registration-form" method="post" action="/auth/register">
+  	<input type="hidden" name="_csrf" value="{{csrfToken}}">		
+	<div class="input-group">
+		<input type="text" name="fname" placeholder="Enter your first name" required/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="lname" placeholder="Enter your last name" required/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="uname" placeholder="Create a username" required/>
+	</div>
+	<div class="input-group">
+		<input type="email" name="email" placeholder="Enter your email" required/>
+	</div>
+	<div class="input-group">
+		<input type="password" name="pwd" placeholder="Create a password" required/>
+	</div>
+	<div class="input-group">
+		<input type="password" name="pwd2" placeholder="Confirm password" required/>
+	</div>
+	<div class="input-group">
+		<input type="submit" value="Submit"/>
+	</div>
+</form>

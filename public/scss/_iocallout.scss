@@ -1,0 +1,193 @@
+.iocallout {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    font-size:1rem; 
+    border-radius: 9px;
+    visibility: hidden;
+    transform: translate3d(100%,0, 0);
+    transition-property: transform, visibility;
+    z-index: 498;
+
+    strong {
+        margin: 0.9rem 0 0 0;
+        padding: 0;
+        word-break: break-word;
+        word-wrap: break-word;
+        max-width: 24em;
+    }
+
+    &.alert {
+        background: rgba(235, 117, 117, 0.8);
+        color: rgb(58, 2, 2);
+        visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1.3rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    &.success {
+        background: rgba(121, 236, 127, 0.8);
+        color: rgb(2, 58, 2);
+        visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    &.warning {
+        background: rgba(233, 233, 90, 0.8);
+        color: rgb(104, 104, 4);
+        // visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    &.primary {
+        background: rgba(130, 171, 224, 0.8);
+        color: rgb(2, 30, 54);
+        visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    &.info {
+        background: rgba(1, 23, 36, 0.8);
+        color: rgb(238, 242, 247);
+        visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    &.information {
+        background: rgba(6, 41, 61, 0.8);
+        color: rgb(251, 230, 159);
+        visibility: hidden;
+        transition-duration: 350ms;
+        transition-property: transform, visibility;
+        
+        &.show {
+            display: grid;
+            visibility: visible;
+            width: 50%;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.close {
+            top: 5%;
+            font-size:1rem; 
+            visibility: hidden;
+            transition-timing-function: ease-in-out;
+            transform: translate3d(200%,0, 0);
+        }
+    }
+
+    .close-button {
+        position: absolute;
+        right: 0.3em;
+        top: 0.00001em;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: rgb(225, 225, 225);
+        font-size: 1.8rem;
+        font-weight: bold;
+        transition-duration: 350ms;
+        transition-property: color;
+        text-align: center;
+
+        &:hover {
+            transition-timing-function: ease-in-out;
+            color:rgb(4, 43, 70);
+            cursor: pointer;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+

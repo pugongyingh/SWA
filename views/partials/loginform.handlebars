@@ -1,0 +1,22 @@
+<form class="login" method="post" action="/auth/login">
+  	<input type="hidden" name="_csrf" value="{{csrfToken}}">
+	<div class="input-group">
+		<label class="input-group-label">
+			<i style="color:rgb(6, 58, 82);"  class="fa fa-envelope fx-2"></i>
+		</label>
+		
+		<input class="input-group-field" type="text" name="usernameOrEmail" id="email" placeholder="Enter your username or email" required/>
+	</div>
+	
+	<div class="input-group">
+		<label class="input-group-label">
+			<i style="color:rgb(6, 58, 82);" class="fa fa-lock"></i>
+		</label>
+		
+		<input class="input-group-field" type="password" name="password" id="pwd" placeholder="Enter your password" required/>
+	</div>
+	
+	<div>
+		<input type="submit" value="Submit"/>
+	</div>
+</form>

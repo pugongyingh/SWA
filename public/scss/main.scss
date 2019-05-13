@@ -1,0 +1,61 @@
+@import 'config';
+@import 'menu';
+@import 'accordion';
+@import 'callout';
+@import 'iocallout';
+@import 'modal';
+@import 'home';
+@import 'about';
+@import 'dashboard';
+
+/* HTML */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	color: $primary-color;
+	background: $primary-background;
+	min-height: 100vh;
+	margin: 0;
+	font-family: cursive, georgia, 'Segoe UI', Tahoma, Gneva, Verdana, sans-serif;
+	line-height: 1.5;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	position: relative;
+}
+
+header,
+footer {
+	padding: 2em;
+	text-align: center;
+}
+
+#footer {
+	position: sticky;
+	bottom: 0 0 0.4em 0;
+}
+
+main {
+	height: calc(100vh - 175px);
+	margin: 2em 0.1em;
+	padding: 0;
+	display: grid;
+	place-content: start;
+	align-items: start;
+
+	.heading {
+		color: rgb(1, 12, 19);
+		font-size: 1.6rem;
+	}
+
+	.dev-heading {
+		color: $secondary-color;
+		background: $secondary-background;
+		font-size: 1.9rem;
+	}
+}
+
+@import 'mobile';

@@ -1,0 +1,62 @@
+{{#if success_message}}
+	<div class="callout small success" data-closable>
+		<strong>{{cfc success_message}}</strong>
+		<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{{/if}}
+
+{{#if error_message}}
+	<div class="callout small alert" data-closable>
+		<strong>{{cfc error_message}}</strong>
+		<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{{/if}}
+
+{{#if warning_message}}
+	<div class="callout small warning" data-closable>
+		<strong>{{cfc warning_message}}</strong>
+		<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{{/if}}
+
+{{#if info_message}}
+	<div class="callout small info" data-closable>
+		<strong>{{cfc info_message}}</strong>
+		<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{{/if}}
+
+{{#if information_message}}
+<div class="callout small information" data-closable>
+	<strong>{{cfc information_message}}</strong>
+	<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+
+{{#if primary_message}}
+<div class="callout small primary" data-closable>
+	<strong>{{cfc primary_message}}</strong>
+	<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+{{/if}}
+{{/if}}
+
+{{#if error}}
+	<div class="callout small alert" data-closable>
+		<strong style="color: rgb(200, 50, 50);">{{cfc error}}</strong>
+		<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{{/if}}

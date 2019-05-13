@@ -1,0 +1,151 @@
+$primary-color: rgb(0, 10, 15);
+$primary-background: rgb(255, 255, 255);
+$secondary-color: rgb(240, 236, 11);
+$secondary-background: rgb(0, 11, 22);
+$show-home-image: true;
+$home-image: url('../graphics/background.jpg');
+$background-opacity: 0.8;
+
+@mixin easeOut {
+	transition: all 0.5s ease-out;	
+}
+
+@mixin easeOutFast {
+	transition: all 0.3s ease-out;	
+}
+
+@mixin easeIn {
+	transition: all 0.5s ease-in;	
+}
+
+@mixin background {
+	@if $show-home-image {
+		&#bg-img {
+			background: $home-image;
+			background-attachment: fixed;
+			background-size: cover;
+			
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				background: rgba($primary-color, $background-opacity);
+			}
+		}
+	}
+}
+
+@mixin border($texture: solid, $size: 1px, $color: #77b) {
+	border: $texture $size $color;
+}
+
+@mixin border-with-radius($texture: solid, $size: 1px, $color: #77b, $bend: 10px) {
+	border: $texture $size $color;
+	border-radius: $bend;
+}
+
+@mixin make-border-with-radius($texture: solid, $size: 1px, $color: #77b, $top-right: 10px, $bottom-right: 10px, $top-left: 10px, $bottom-left: 10px) {
+	border: $texture $size $color;
+	border-top-left-radius: $top-left;
+	border-bottom-left-radius: $bottom-left;
+	border-top-right-radius: $top-right;
+	border-bottom-right-radius: $bottom-right;
+}
+
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Media Query Mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaTn {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin mediaMds {
+  @media screen and (min-width: 865px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+@mixin mediaHeightSm {
+  @media screen and (max-height: 502px)  {
+    @content;
+  }
+}
+
+@mixin mediaHeightTn {
+  @media screen and (max-height: 300px)  {
+    @content;
+  }
+}
+
+/* Global Classes */
+.border {
+	border: 1px solid rgb(155,155,255);
+}
+
+.border-light {
+	border: 1px solid rgb(155,155,200);
+	border-radius: 10px;
+}
+
+.border-dark {
+	border: 0.2em solid rgb(55,55,107);
+	border-radius: 6px;
+}
+
+
+
+
+/* Element layout over-flow */
+.v-scroll {
+  overflow: scroll; }
+
+::-webkit-scrollbar {
+  width: 0;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */ }
+
+::-webkit-scrollbar-thumb {
+  background: transparent; }
+
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none; }
+

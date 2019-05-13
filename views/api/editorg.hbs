@@ -1,0 +1,40 @@
+<main id="edit-org">
+   <form class="org-form" method="post" action="/api/org/edit/{{org._id}}">		
+        <div class="input-group">
+            <input type="text" name="name" value="{{org.name}}" required/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="type" value="{{org.type}}" required/>
+        </div>
+        <div class="input-group">
+            <input type="url" name="url" value="{{#if org.url}}org.url{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="street" value="{{#if org.address.street}}org.address.street{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="city" value="{{#if org.address.city}}org.address.city{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="state" value="{{#if org.address.state}}org.address.state{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="zipcode" name="zipcode" value="{{#if org.address.zipcode}}org.address.zipcode{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="country" value="{{#if org.address.country}}org.address.country{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="phone" name="phone" value="{{#if org.phone}}org.phone{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="email" name="email" value="{{#if org.email}}org.email{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="text" name="username" value="{{#if org.loginName}}org.loginName{{else}}{{/if}}"/>
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+</main>

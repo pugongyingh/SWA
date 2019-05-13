@@ -1,0 +1,110 @@
+#dashboard {
+  .content {
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        margin: 0;
+        padding: 1.5rem auto;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 1.4rem;
+        font-weight: 646;
+        transition: 0.4s;
+      }
+      
+      .active, .accordion:hover {
+        background-color: #ccc;
+      }
+      
+      .panel {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(235, 237, 240);
+        overflow: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        @include easeOut();
+        display: grid;
+        grid-auto-rows: auto;
+        justify-content: center;
+
+        .input-group {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          label {
+            text-align: left;
+            font-weight: 540;
+            font-size: 0.8rem;
+            margin: 0;
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+            grid-column: 1/2;
+          }
+          
+          input,
+          textarea {
+            font-size: 0.7rem;
+            margin: 0;
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+            background: transparent;
+            border: none;
+            grid-column: 3/4;
+          }
+
+          textarea {
+            background: transparent;
+            border: none;
+            
+          }
+
+        }
+
+        .input-group-parent {
+          display: grid;
+          grid-row-gap: 0.4rem;
+          grid-auto-rows: auto;
+          
+          input {
+            font-size: 1.1rem;
+            background: transparent;
+            border: none;
+          }
+        }
+
+        .input-group-controls {
+          display:flex;
+          justify-content: space-between;
+          
+          .edit-button {
+            color: rgb(0,225,0);
+            border: none;
+            background: transparent;
+          }
+
+          .delete-button {
+            color: rgb(225,0,0);
+            border: none;
+            background: transparent;
+          }
+
+          .delete-button:hover,
+          .delete-button:focus,
+          .edit-button:hover,
+          .edit-button:focus {
+            cursor: pointer;
+          }
+        }
+      }
+
+      a {
+        font-weight: bolder;
+        font-size: 1.4rem;
+      }
+  }
+}

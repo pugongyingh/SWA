@@ -1,0 +1,49 @@
+#home {
+    display: grid;
+    place-items: center;
+    place-content: start;
+
+    .lg-heading {
+        grid-row: 1;
+        grid-column: 1/12;
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sm-heading {
+        grid-row: 2;
+        grid-column: 1/12;
+        font-size: 1rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .icons {
+        grid-row: 3;
+        grid-column: 2/11;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+        a {
+            text-align: center;
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+            &.google {
+                color: rgb(104, 8, 8);
+            }
+            &.facebook {
+                color: rgb(2, 48, 66);
+            }
+            &.linkedin {
+                color: rgb(1, 25, 41);
+            }
+            &.github {
+                color: rgb(1, 4, 7);
+            }
+        }
+    }
+}

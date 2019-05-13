@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{cfc (truncate title 22)}}</title>   
+		<link rel="shortcut icon" {{#if favicon }} href="{{favicon}}" {{else}}href="/favicon.ico"{{/if}} type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body class="transition-down">
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" 
+                class="close close-modal" title="Close Modal">&times;</span>
+            <div class="modal-content">
+                {{>orgform}}
+            </div>
+        </div>
+        {{>iomessage}}
+		{{>menu}}
+        <div class="container v-scroll">
+            {{>message}}
+            {{{body}}}
+        </div> 
+        {{>footer}}   
+    </body>
+		<script src="/js/app.js"></script>
+        <script src="/js/menu.js"></script>
+        <script src="/js/youtube.js"></script>
+        <script src="/js/start.js"></script>
+        {{#if user}}
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="/js/socketio.js"></script>
+            <script src="/js/ckeditor5-build-classic/ckeditor.js"></script>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#editor'), {
+                        toolbar: ['heading', '|', 
+                            'bold', 'italic', 'link', '|',
+                            'bulletedList', 'numberedList', 'blockQuote', '|',
+                            'undo', 'redo'],
+                        heading: {
+                            options: [
+                                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' }
+                            ]
+                        }
+                    })
+                    .then(editor => {
+                        window.myEditor = editor;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            </script>
+        {{/if}}
+</html>

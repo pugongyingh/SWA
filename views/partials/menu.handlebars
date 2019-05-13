@@ -1,0 +1,76 @@
+
+<header class="global-menu">
+	<div class="menu-btn">
+		<div class="btn-line"></div>
+		<div class="btn-line"></div>
+		<div class="btn-line"></div>
+	</div>
+	{{#unless user}}
+	<nav class="menu">		
+		<ul class="menu-nav">
+			<li class="nav-item">
+				<a href="/" class="nav-link">
+					Home
+				</a>
+			</li>
+			
+			<li class="nav-item">
+				<a href="/about" class="nav-link">
+					About Us
+				</a>
+			</li>
+			
+			<li class="nav-item">
+				<a href="/crest/test_g" class="nav-link">
+					Logo
+				</a>
+				<small>
+					<a href="/logo/test_g" class="nav-link">
+						Download
+					</a>
+				</small>
+			</li>
+			
+			<li class="nav-item">						
+				<a href="/auth/facebook" class="nav-link">
+					Facebook Signin
+				</a>
+			</li>
+			
+			<li class="nav-item">						
+				<a href="/auth/github" class="nav-link">
+					GitHub Signin
+				</a>
+			</li>
+			
+			<li class="nav-item">						
+				<a href="/auth/google" class="nav-link">
+					Google Signin
+				</a>
+			</li>
+			
+			<li class="nav-item">
+				<a href="/auth/login" class="nav-link">
+					User SignIn
+				</a>
+			</li>
+			
+			<li class="nav-item">
+				<a href="/auth/register" class="nav-link">
+					Register
+				</a>
+			</li>
+		</ul>
+	</nav>
+{{else}}	
+	<nav class="menu">		
+		<ul class="menu-nav logout">
+			<li class="nav-item">
+			<a href="/auth/logout" class="nav-link logout-link">
+				Logout
+			</a>
+		</li>
+		</ul>
+	</nav>
+{{/unless}}
+</header>

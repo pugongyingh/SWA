@@ -1,0 +1,42 @@
+<form class="org-form" method="POST" action="/api/orgs">
+  	<input type="hidden" name="_csrf" value="{{csrfToken}}">		
+	<div class="input-group">
+		<input type="text" name="name" placeholder="Enter organization's name" required/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="type" placeholder="Enter type of organization" required/>
+	</div>
+	<div class="input-group">
+		<input type="url" name="url" placeholder="Enter organization's web address"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="street" placeholder="Enter organization's street address"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="city" placeholder="Enter organization's city"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="state" placeholder="Enter organization's state"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="zipcode" placeholder="Enter organization's zipcode"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="country" placeholder="Enter organization's country"/>
+	</div>
+	<div class="input-group">
+		<input type="phone" name="phone" placeholder="Enter organization's phone"/>
+	</div>
+	<div class="input-group">
+		<input type="email" name="email" placeholder="Enter organization's email"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="loginName" placeholder="Enter your login name"/>
+	</div>
+	<div class="input-group">
+		<input type="text" name="loginPassword" placeholder="Enter your login password"/>
+	</div>
+	<div class="input-group">
+		<input type="submit" value="Submit"/>
+	</div>
+</form>

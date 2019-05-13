@@ -1,0 +1,96 @@
+<main id="dashboard" class="v-scroll">
+    <div id="youtube-parent" class="youtube-overlay">
+    
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <div class="youtube">
+                <iframe class="player"
+                    allowFullScreen
+                    allow="encrypted-media"
+                    src="https://www.youtube.com/embed/{{initVideoItem.channelId}}?controls=1&amprel=0">
+                </iframe>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="search">
+        <form class="search-form" method="post" action="/api/youtube/search">
+            <div class="input-group">
+                <input type="text" name="term" placeholder="Enter search term"/>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <div class="index v-scroll">
+        <ul class="index-ul">
+            <li>
+                <label>Hello {{#if user.firstName}} 
+                    {{cfc user.firstName}} {{cfc user.lastName}}
+                    {{else}}{{cfc user.userName}}{{/if}}
+                </label>
+            </li>
+            <li>
+                <a href="#" 
+                    class="search-link"
+                    data-tool-tip="Search YouTube Content">Search</a>
+            </li>
+            <li>
+                <a href="/user/dashboard"
+                    data-tool-tip="View Your Dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a href="/user/profile"
+                    data-tool-tip="View Your Profile">Profile</a>
+            </li>
+            <li>
+                <a href="/auth/logout"
+                    data-tool-tip="Sign Out">Sign Out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content v-scroll">
+        {{#if hasVideos}}
+            {{#if videoSearched}}
+                <a class="back-link" href="/api/youtube/search" style="background: transparent">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            {{/if}}
+
+            {{#each videos}}
+                <div class="content-panel">
+                    <button class="accordion">{{cfc (truncate snippet.title 21)}}</button>
+                    <div class="panel v-scroll">
+                        <div class="input-group">
+                            <label class="label">
+                                <a class="video-item" href="#" id="{{id.videoId}}">
+                                    <img class="thumbnail" src="{{snippet.thumbnails.default.url}}"/>
+                                </a>
+                            </label>
+                            <textarea class="description">{{snippet.description}}</textarea>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+        {{#if hasVideo}}
+        <h2 class="dev-heading">Has Single Video</h2>
+            <div class="v-scroll">
+                <label class="title">{{cfc video.title}}</label>                 
+                <div class="input-group">
+                    <label class="label">
+                        Title
+                    </label>
+                </div>
+            </div>
+        {{else}}
+            <p>Click search link to search YouTube content.</p>
+        {{/if}}
+        {{/if}}
+    </div>
+</main>

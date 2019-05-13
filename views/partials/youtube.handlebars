@@ -1,0 +1,20 @@
+<div class="index v-scroll">
+    <ul class="index-ul">
+        <li><label>Hello {{#if user.firstName}} {{cfc user.firstName}} {{cfc user.lastName}}{{else}}{{cfc user.userName}}{{/if}}</label></li>
+        <li>
+            <a href="#" onclick="document.getElementById('id01').style.display='block'">Add</a>
+        </li>
+        <li>
+            <a href="#" class="search-link">Search</a>
+        </li>
+        <li>
+            <a href="/user/profile">Profile</a>
+        </li>
+        <li>
+            <a href="/api/youtube/search">YouTube</a>
+        </li>
+        <li>
+            <a href="/auth/logout">Sign Out</a>
+        </li>
+    </ul>
+</div>
