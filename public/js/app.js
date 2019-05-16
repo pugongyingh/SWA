@@ -66,6 +66,7 @@ const getSocketScript = (_window) => {
     const script = document.createElement('script');
     script.setAttribute('src', data.url);
     _window.document.body.appendChild(script);
+    getPrivateScript(_window);
   });
 };
  
@@ -112,38 +113,21 @@ const getPrivateScript = (_window) => {
 const setPageHead = (_window) => { 
   const el = `
     <title>Private Message</title>   
-		<link rel="shortcut icon" {{#if favicon }} href="{{favicon}}" {{else}}href="/favicon.ico"{{/if}} type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 		
   `;
   _window.document.head.innerHTML = el;
+  getCss(_window);
+  getMessageForm(_window);
 };
 
 const createPrivateMessage = () => { 
   const _window = window.open('', 'private-window', 'height=500,location=0,menubar=0,status=0,width=500', true);
   setPageHead(_window);
-  getCss(_window);
-  getMessageForm(_window);
   getSocketScript(_window);
-  getPrivateScript(_window);
   getCkEditor(_window);
-  const txtScript = `
-    
-    <script>
-      const socket = io.connect();
-
-      const validMessage = (arg) => {
-          return (null != arg &&
-              undefined != arg &&
-              (typeof arg === 'string' &&
-                  arg.length > 0));
-      };
-    </script>
-    
-  `;
-  _window.document.body.innerHTML = `${txtScript}`;
-  // alert('private message');
 };
 
 // Accordion effect
