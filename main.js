@@ -95,8 +95,8 @@ io.sockets.on('connection', (socket) => {
     });
 
     // On client send message to specific client
-    socket.on('sendmessagetouser', function (data) {
-
+    socket.on('privatemessage', (data) => {
+        console.log(data.data);
     });
 
     // On server broadcast message

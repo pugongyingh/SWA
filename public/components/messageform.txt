@@ -1,0 +1,23 @@
+<main id="dashboard" class="v-scroll">
+    <input id="email" type="hidden" value="{{user.email}}" />
+    <input id="clientId" type="hidden" />
+    <input id="name" type="hidden" value="{{#if user.firstName}} {{user.firstName}} {{user.lastName}} {{else}} 
+    {{user.userName}} {{/if}}" />
+
+    <section class="client-list">
+        <ul id="client-list"></ul>
+    </section>
+
+    <section class="message-handler v-scroll">
+        <div id="message-handler"></div>
+    </section>
+
+    <section class="message-form">
+        <div id="message-form">
+            <textarea class="message" id="editor" cols="100" rows="12"></textarea>
+            <button id="message-button">
+                Send
+            </button>
+        </div>
+    </section>
+</main>
