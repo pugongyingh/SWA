@@ -14,7 +14,7 @@ const { log, table } = require('./custom_modules/log');
 const { cap } = require('./custom_modules/cfc');
 const { mongoURI, mongoUserCollection } = require('./config/keys');
 const { fyi, error, primary } = require('./custom_modules/colormessage');
-const PORT = process.env.PORT || 3000;
+const PORT = 80 || 8080;
 
 // Passport Config
 require('./config/passport')(passport);
@@ -120,7 +120,7 @@ app.use('/', index);
 app.use('/auth', auth);
 app.use('/user', user);
 
-// server.listen(PORT);
+ server.listen(PORT);
 
 // app.use('/.netlify/functions/api/',index);
 
